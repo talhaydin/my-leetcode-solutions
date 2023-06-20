@@ -12,15 +12,17 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
  * @return {number}
  */
 var maxProfit = function (prices) {
-  if (prices == null || prices.length <= 1) return 0; //empty array
-  let minBuy = prices[0]; //initialize min price to buy
-  let profit = 0; // max profit initialized to zero
+  let maxProfit = 0;
+  let minPrice = prices[0];
   for (let i = 1; i < prices.length; i++) {
-    //checks whole array
-    minBuy = Math.min(minBuy, prices[i]); //get min price
-    console.log(minBuy);
-    profit = Math.max(profit, prices[i] - minBuy); //get profit
-    console.log("profit" + profit);
+    const currentPrice = prices[i];
+    const currentProfit = currentPrice - minPrice;
+    if (currentProfit > maxProfit) {
+      maxProfit = currentProfit;
+    }
+    if (currentPrice < minPrice) {
+      minPrice = currentPrice;
+    }
   }
-  return profit; //return max profit
+  return maxProfit;
 };
