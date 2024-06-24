@@ -13,6 +13,6 @@ var mergeAlternately = function (word1, word2) {
   }
 
   // eventually the statement which adds the shorter word's letter will stop and the other one which is longer, will continue.
-
+  //
   return result;
 };
