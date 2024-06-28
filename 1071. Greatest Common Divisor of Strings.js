@@ -22,22 +22,3 @@ Constraints:
 
 1 <= str1.length, str2.length <= 1000
 str1 and str2 consist of English uppercase letters. */
-
-var gcdOfStrings = function (str1, str2) {
-  // Check if the concatenation of the strings in different orders is the same
-  if (str1 + str2 !== str2 + str1) {
-    return "";
-  }
-  // Find the minimum length of the two strings
-  let minLength = Math.min(str1.length, str2.length);
-  // Start with the longest possible divisor and check down to length 1
-  for (let l = minLength; l > 0; l--) {
-    // Check if the current length divides both strings' lengths
-    if (str1.length % l === 0 && str2.length % l === 0) {
-      // Return the substring of str1 up to this length as the potential GCD string
-      return str1.substring(0, l);
-    }
-  }
-};
-
-console.log(gcdOfStrings("AAAAAA, AA"));
