@@ -16,3 +16,12 @@ Explanation: If you give all extraCandies to:
 - Kid 5, they will have 3 + 3 = 6 candies, which is the greatest among the kids.
 
 */
+
+var kidsWithCandies = function (candies: number[], extraCandies: number) {
+  // most amount of candy amount in a kid
+  const mostCandies = Math.max(...candies);
+  // map candies and find if extra candy and candy on kid combined is bigger than most candy
+  return candies.map(
+    (candyAmount) => candyAmount + extraCandies >= mostCandies
+  );
+};
