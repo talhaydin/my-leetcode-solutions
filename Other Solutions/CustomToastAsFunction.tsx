@@ -177,3 +177,36 @@ const showCustomToastNotification = ({
 
 export default showCustomToastNotification;
  */
+
+// can be used like below
+
+/* 
+const [showButton, setShowButton] = useState<boolean>(false);
+
+useEffect(() => {
+    const iframes = document.getElementsByClassName('getAQuoteError'); // do not stack same toast notification on top of each other
+    if (iframes.length === 0) {
+      {
+        showButton === true &&
+          showCustomToastNotification({
+            message: 'Looks like you changed something. Get a new quote to view your updated prices.',
+            status: 'success',
+            labelText: 'Get A Quote',
+            labelClassname: 'bg-primary',
+            duration: 8000,
+            name: 'getAQuote',
+            className: 'getAQuoteError',
+            successOnClick: () => {
+              setShowButton(() => false);
+              quoteApiProvider === 0 || isV2AutoApi
+                ? chainedApiCallForTransaction()
+                : chainedApiCallForML({
+                    coveragesForPostBody: coverages,
+                    vehicleCoveragesForPostBody: vehicleCoverages,
+                  });
+            },
+          });
+      }
+    }
+  }, [showButton]);
+ */
