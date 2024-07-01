@@ -1,4 +1,4 @@
-import toast from "react-hot-toast";
+/* import toast from "react-hot-toast";
 import { useAppSelector } from "setup/redux/Hooks";
 
 export interface CustomToastNotificationProps {
@@ -176,3 +176,4 @@ const showCustomToastNotification = ({
 };
 
 export default showCustomToastNotification;
+ */
